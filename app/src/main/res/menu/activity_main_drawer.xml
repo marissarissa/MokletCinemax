@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nowplaying"
+            android:icon="@drawable/ic_play_circle_outline_black_24dp"
+            android:title="Now Playing" />
+        <item
+            android:id="@+id/comingsoon"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Coming Soon" />
+        <item
+            android:id="@+id/theater"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Theater" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="About Me" />
+    </group>
+
+
+</menu>
