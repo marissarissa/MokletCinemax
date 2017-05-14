@@ -38,7 +38,7 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
 
     @Override
     public TopAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.now_list, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_list, parent, false);
         TopAdapter.ViewHolder vh = new TopAdapter.ViewHolder(v);
         return vh;
     }

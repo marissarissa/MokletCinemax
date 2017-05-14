@@ -30,18 +30,17 @@ public class TopFragment extends Fragment {
     ArrayList<Results> mlist = new ArrayList<>();
     TopAdapter topAdapter;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+    public TopFragment() {
+        // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View rootview = inflater.inflate(R.layout.fragment_top, container, false);
-
         RecyclerView rv = (RecyclerView) rootview.findViewById(R.id.recyclerTop);
         rv.setHasFixedSize(true);
         topAdapter = new TopAdapter(this, mlist, getContext());
