@@ -11,13 +11,10 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Coming Soon" />
         <item
-            android:id="@+id/theater"
+            android:id="@+id/rate"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Theater" />
-        <item
-            android:id="@+id/about"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="About Me" />
+            android:title="Top Rate" />
+
     </group>
 
 

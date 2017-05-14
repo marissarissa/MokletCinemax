@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.adapter.ComingAdapter;
+import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.adapter.TopAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.model.Results;
 import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.model.ResultsRespone;
 import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.service.GsonGetRequest;
@@ -26,35 +26,37 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl317.mokletcinemax.service.Vol
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ComingFragment extends Fragment {
+public class TopFragment extends Fragment {
     ArrayList<Results> mlist = new ArrayList<>();
-    ComingAdapter comingAdapter;
+    TopAdapter topAdapter;
 
-
-    public ComingFragment() {
-        // Required empty public constructor
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_coming, container, false);
-        RecyclerView rv = (RecyclerView) rootview.findViewById(R.id.recyclerComing);
+
+        View rootview = inflater.inflate(R.layout.fragment_top, container, false);
+
+        RecyclerView rv = (RecyclerView) rootview.findViewById(R.id.recyclerTop);
         rv.setHasFixedSize(true);
-        comingAdapter = new ComingAdapter(this, mlist, getContext());
-        rv.setAdapter(comingAdapter);
+        topAdapter = new TopAdapter(this, mlist, getContext());
+        rv.setAdapter(topAdapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
 
         downloadDataResource();
         return rootview;
+
     }
 
     private void downloadDataResource() {
-        String url = "https://api.themoviedb.org/3/movie/upcoming?api_key=fb9cf49e2df500beca3a138fa9697205&language=en-US&page=1";
+        String url = "https://api.themoviedb.org/3/movie/top_rated?api_key=fb9cf49e2df500beca3a138fa9697205&language=en-US&page=1";
 
         GsonGetRequest<ResultsRespone> myRequest = new GsonGetRequest<ResultsRespone>
                 (url, ResultsRespone.class, null, new Response.Listener<ResultsRespone>() {
@@ -63,7 +65,7 @@ public class ComingFragment extends Fragment {
                     public void onResponse(ResultsRespone response) {
                         Log.d("FLOW", "onResponse: " + (new Gson().toJson(response)));
                         mlist.addAll(response.results);
-                        comingAdapter.notifyDataSetChanged();
+                        topAdapter.notifyDataSetChanged();
                     }
 
                 }, new Response.ErrorListener() {
@@ -75,5 +77,4 @@ public class ComingFragment extends Fragment {
                 });
         VolleySingleton.getInstance(getActivity()).addToRequestQueue(myRequest);
     }
-
 }

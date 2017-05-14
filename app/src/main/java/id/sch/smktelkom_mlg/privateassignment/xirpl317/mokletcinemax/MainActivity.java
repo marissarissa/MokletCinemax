@@ -102,10 +102,16 @@ public class MainActivity extends AppCompatActivity
             fragment = new ComingFragment();
             setTitle("Coming Soon");
 
+        } else if (id == R.id.top) {
+            fragment = new TopFragment();
+            setTitle("Top Rate");
+
         }
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commitNow();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, fragment).commit();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
