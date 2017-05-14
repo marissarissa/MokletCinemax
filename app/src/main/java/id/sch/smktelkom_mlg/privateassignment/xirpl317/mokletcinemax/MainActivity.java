@@ -102,14 +102,6 @@ public class MainActivity extends AppCompatActivity
             fragment = new ComingFragment();
             setTitle("Coming Soon");
 
-        } else if (id == R.id.theater) {
-            fragment = new TheaterFragment();
-            setTitle("Theater");
-
-        } else if (id == R.id.about) {
-            fragment = new AboutFragment();
-            setTitle("About Me");
-
         }
 
 
