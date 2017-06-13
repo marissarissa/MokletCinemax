@@ -1,6 +1,6 @@
 # MokletCinemax
 # Link File APK release dari Aplikasi
-https://drive.google.com/open?id=0Bx2FSzrPeVWcc1BUMmhaWF9GQ1k
+https://drive.google.com/open?id=0B-otITDC4btDdlhTRjlfMktwNDQ
 
 # Identitas Siswa
 
